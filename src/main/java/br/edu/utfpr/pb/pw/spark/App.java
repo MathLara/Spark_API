@@ -14,6 +14,7 @@ public class App {
 
         port(4567);
 
+        //configurações CORS - permisão de outros dominios mandarem requisições e utilizar os metodos se existirem
         options("/*", (request, response) -> {
             String accessControlHeaders = request.headers("Access-Control-Request-Headers");
             if (accessControlHeaders != null) {
@@ -38,7 +39,7 @@ public class App {
         /* Se quiser visualizar na Web o banco, habilite o comando abaixo
         try {
             Server.createWebServer("-web", "-webAllowOthers", "-webPort", "8082").start();
-            System.out.println("[DB] Console H2 disponível em http://localhost:8082");
+            System.out.println("Banco de dados H2 disponível em http://localhost:8082");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -124,14 +124,3 @@ URL base:
 
 `http://localhost:4567`
 
-## ⚖️ Spark Java x Spring Boot
-
-| Recurso | Spark Java | Spring Boot |
-|---|---|---|
-| Endpoints | `get()`, `post()` etc. | `@GetMapping`, `@PostMapping` etc. |
-| JSON | Gson manualmente | Jackson integrado |
-| Injeção de dependências | Manual | `@Autowired` / mecanismos do Spring |
-| Banco | JDBC + SQL manual | JPA/Hibernate, entre outras opções |
-| Servidor | Jetty | Tomcat por padrão |
-| Validação | `if/else` manual | Bean Validation + `@Valid` |
-

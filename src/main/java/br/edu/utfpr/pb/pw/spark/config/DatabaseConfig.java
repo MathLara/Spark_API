@@ -33,8 +33,8 @@ public class DatabaseConfig {
                 """;
 
         try (Connection conn = getConnection();
-             Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+             Statement s = conn.createStatement()) {
+            s.execute(sql);
             System.out.println("[DB] Tabela 'pessoa' criada/verificada com sucesso.");
         } catch (SQLException e) {
             System.err.println("[DB] Erro ao criar tabela: " + e.getMessage());

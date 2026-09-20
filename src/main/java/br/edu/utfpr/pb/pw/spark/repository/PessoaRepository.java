@@ -58,7 +58,6 @@ public class PessoaRepository {
             preencherParametros(ps, pessoa);
             ps.executeUpdate();
 
-            // Recupera o ID gerado pelo banco
             ResultSet keys = ps.getGeneratedKeys();
             if (keys.next()) {
                 pessoa.setId(keys.getLong(1));
@@ -82,7 +81,7 @@ public class PessoaRepository {
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             preencherParametros(ps, pessoa);
-            ps.setLong(11, pessoa.getId()); // WHERE id = ?
+            ps.setLong(11, pessoa.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao atualizar pessoa: " + e.getMessage(), e);
